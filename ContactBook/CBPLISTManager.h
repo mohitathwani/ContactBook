@@ -12,5 +12,6 @@
 
 
 +(BOOL)copyPLISTFileToDocuments;
-+ (NSString*) getPlistPath:(NSString*) filename;
++ (NSString*) getPlistPath;
++(NSMutableArray *)sortArray:(NSMutableArray *)array withKey:(NSString *)key ascending:(BOOL)ascending;
 @end

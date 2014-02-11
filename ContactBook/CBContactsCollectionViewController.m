@@ -11,6 +11,7 @@
 @interface CBContactsCollectionViewController ()
 
 @property (strong, nonatomic) NSMutableArray *contactsArray;
+@property (strong, nonatomic) NSMutableArray *sortedContactsArray;
 @end
 
 @implementation CBContactsCollectionViewController
@@ -28,7 +29,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath:@"Contacts.plist"]];
+    self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath]];
+    
+    self.sortedContactsArray = [CBPLISTManager sortArray:self.contactsArray withKey:@"firstName" ascending:YES];
+    
+    NSLog(@"%@",self.sortedContactsArray);
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {

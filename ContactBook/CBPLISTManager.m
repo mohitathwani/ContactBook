@@ -12,14 +12,14 @@
 
 
 
-+ (NSString*) getPlistPath:(NSString*) filename{
++ (NSString*) getPlistPath{
     //Search for standard documents using NSSearchPathForDirectoriesInDomains
     //First Param = Searching the documents directory
     //Second Param = Searching the Users directory and not the System
     //Expand any tildes and identify home directories.
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
     NSString *documentsDir = [paths objectAtIndex:0];
-    return [documentsDir stringByAppendingPathComponent:filename];
+    return [documentsDir stringByAppendingPathComponent:@"Contacts.plist"];
 }
 
 
@@ -28,7 +28,7 @@
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSError *error;
     
-    NSString *contactsPathInDocuments = [CBPLISTManager getPlistPath:@"Contacts.plist"];
+    NSString *contactsPathInDocuments = [CBPLISTManager getPlistPath];
     
     BOOL copyResult = NO;
     
@@ -40,5 +40,24 @@
     
     return copyResult;
     
+}
+
++(NSMutableArray *)sortArray:(NSMutableArray *)array withKey:(NSString *)key ascending:(BOOL)ascending {
+    NSMutableArray *sortedArray;
+    
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
+                                    
+    sortedArray = [[array sortedArrayUsingDescriptors:@[descriptor]] mutableCopy];
+    
+    [CBPLISTManager updatePLISTWithSortedArray:sortedArray];
+                                    
+    return sortedArray;
+    
+}
+
++(void)updatePLISTWithSortedArray:(NSMutableArray *)sortedArray {
+    
+    
+    [sortedArray writeToFile:[CBPLISTManager getPlistPath] atomically:YES];
 }
 @end
