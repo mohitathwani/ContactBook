@@ -60,4 +60,17 @@
     
     [sortedArray writeToFile:[CBPLISTManager getPlistPath] atomically:YES];
 }
+
++(void)updatePLISTWithEntry:(NSDictionary *)newEntry {
+    NSMutableArray *contactsArray = [CBPLISTManager contactsArrayFromPLIST];
+    [contactsArray addObject:newEntry];
+    [CBPLISTManager updatePLISTWithSortedArray:contactsArray];
+    
+}
+
++(NSMutableArray *)contactsArrayFromPLIST {
+    NSMutableArray *contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath]];
+    
+    return contactsArray;
+}
 @end
