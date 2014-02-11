@@ -23,6 +23,7 @@
 		063878DD18A91D3D001FB60E /* ContactBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063878DC18A91D3D001FB60E /* ContactBookTests.m */; };
 		063878E818A91EDD001FB60E /* CBContactsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063878E718A91EDD001FB60E /* CBContactsCollectionViewController.m */; };
 		063878EA18A9221E001FB60E /* Contacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063878E918A9221E001FB60E /* Contacts.plist */; };
+		E45CD94018AA3B71007B0AE0 /* CBContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45CD93F18AA3B71007B0AE0 /* CBContactCell.m */; };
 		E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */; };
 /* End PBXBuildFile section */
 
@@ -58,6 +59,8 @@
 		063878E618A91EDD001FB60E /* CBContactsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContactsCollectionViewController.h; sourceTree = "<group>"; };
 		063878E718A91EDD001FB60E /* CBContactsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBContactsCollectionViewController.m; sourceTree = "<group>"; };
 		063878E918A9221E001FB60E /* Contacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Contacts.plist; sourceTree = "<group>"; };
+		E45CD93E18AA3B71007B0AE0 /* CBContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContactCell.h; sourceTree = "<group>"; };
+		E45CD93F18AA3B71007B0AE0 /* CBContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBContactCell.m; sourceTree = "<group>"; };
 		E4D1BD6418AA295200CB34BE /* CBPLISTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPLISTManager.h; sourceTree = "<group>"; };
 		E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPLISTManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -130,6 +133,8 @@
 				063878E918A9221E001FB60E /* Contacts.plist */,
 				E4D1BD6418AA295200CB34BE /* CBPLISTManager.h */,
 				E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */,
+				E45CD93E18AA3B71007B0AE0 /* CBContactCell.h */,
+				E45CD93F18AA3B71007B0AE0 /* CBContactCell.m */,
 			);
 			path = ContactBook;
 			sourceTree = "<group>";
@@ -266,6 +271,7 @@
 				063878E818A91EDD001FB60E /* CBContactsCollectionViewController.m in Sources */,
 				063878BB18A91D3D001FB60E /* main.m in Sources */,
 				063878BF18A91D3D001FB60E /* CBAppDelegate.m in Sources */,
+				E45CD94018AA3B71007B0AE0 /* CBContactCell.m in Sources */,
 				E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CBContactCell.h"
 
 @interface CBContactsCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate>
 
