@@ -24,9 +24,6 @@
 		063878E818A91EDD001FB60E /* CBContactsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063878E718A91EDD001FB60E /* CBContactsCollectionViewController.m */; };
 		063878EA18A9221E001FB60E /* Contacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063878E918A9221E001FB60E /* Contacts.plist */; };
 		E45CD94018AA3B71007B0AE0 /* CBContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45CD93F18AA3B71007B0AE0 /* CBContactCell.m */; };
-		E45CD94918AA46D2007B0AE0 /* BZGFormFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45CD94318AA46D2007B0AE0 /* BZGFormFieldCell.m */; };
-		E45CD94A18AA46D2007B0AE0 /* BZGFormInfoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45CD94518AA46D2007B0AE0 /* BZGFormInfoCell.m */; };
-		E45CD94B18AA46D2007B0AE0 /* BZGFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45CD94718AA46D2007B0AE0 /* BZGFormViewController.m */; };
 		E45CD94E18AA4707007B0AE0 /* CBFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E45CD94D18AA4707007B0AE0 /* CBFormViewController.m */; };
 		E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */; };
 /* End PBXBuildFile section */
@@ -65,13 +62,6 @@
 		063878E918A9221E001FB60E /* Contacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Contacts.plist; sourceTree = "<group>"; };
 		E45CD93E18AA3B71007B0AE0 /* CBContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContactCell.h; sourceTree = "<group>"; };
 		E45CD93F18AA3B71007B0AE0 /* CBContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBContactCell.m; sourceTree = "<group>"; };
-		E45CD94218AA46D2007B0AE0 /* BZGFormFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZGFormFieldCell.h; sourceTree = "<group>"; };
-		E45CD94318AA46D2007B0AE0 /* BZGFormFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZGFormFieldCell.m; sourceTree = "<group>"; };
-		E45CD94418AA46D2007B0AE0 /* BZGFormInfoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZGFormInfoCell.h; sourceTree = "<group>"; };
-		E45CD94518AA46D2007B0AE0 /* BZGFormInfoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZGFormInfoCell.m; sourceTree = "<group>"; };
-		E45CD94618AA46D2007B0AE0 /* BZGFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BZGFormViewController.h; sourceTree = "<group>"; };
-		E45CD94718AA46D2007B0AE0 /* BZGFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BZGFormViewController.m; sourceTree = "<group>"; };
-		E45CD94818AA46D2007B0AE0 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		E45CD94C18AA4707007B0AE0 /* CBFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBFormViewController.h; sourceTree = "<group>"; };
 		E45CD94D18AA4707007B0AE0 /* CBFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBFormViewController.m; sourceTree = "<group>"; };
 		E4D1BD6418AA295200CB34BE /* CBPLISTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPLISTManager.h; sourceTree = "<group>"; };
@@ -105,7 +95,6 @@
 		063878A218A91D3D001FB60E = {
 			isa = PBXGroup;
 			children = (
-				E45CD94118AA46D2007B0AE0 /* BZGFormViewController */,
 				063878B418A91D3D001FB60E /* ContactBook */,
 				063878D618A91D3D001FB60E /* ContactBookTests */,
 				063878AD18A91D3D001FB60E /* Frameworks */,
@@ -182,20 +171,6 @@
 				063878D918A91D3D001FB60E /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		E45CD94118AA46D2007B0AE0 /* BZGFormViewController */ = {
-			isa = PBXGroup;
-			children = (
-				E45CD94218AA46D2007B0AE0 /* BZGFormFieldCell.h */,
-				E45CD94318AA46D2007B0AE0 /* BZGFormFieldCell.m */,
-				E45CD94418AA46D2007B0AE0 /* BZGFormInfoCell.h */,
-				E45CD94518AA46D2007B0AE0 /* BZGFormInfoCell.m */,
-				E45CD94618AA46D2007B0AE0 /* BZGFormViewController.h */,
-				E45CD94718AA46D2007B0AE0 /* BZGFormViewController.m */,
-				E45CD94818AA46D2007B0AE0 /* Constants.h */,
-			);
-			path = BZGFormViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,9 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E45CD94E18AA4707007B0AE0 /* CBFormViewController.m in Sources */,
-				E45CD94B18AA46D2007B0AE0 /* BZGFormViewController.m in Sources */,
-				E45CD94A18AA46D2007B0AE0 /* BZGFormInfoCell.m in Sources */,
-				E45CD94918AA46D2007B0AE0 /* BZGFormFieldCell.m in Sources */,
 				063878E818A91EDD001FB60E /* CBContactsCollectionViewController.m in Sources */,
 				063878BB18A91D3D001FB60E /* main.m in Sources */,
 				063878BF18A91D3D001FB60E /* CBAppDelegate.m in Sources */,
