@@ -33,8 +33,6 @@
     
     self.sortedContactsArray = [CBPLISTManager sortArray:self.contactsArray withKey:@"firstName" ascending:YES];
     
-    NSLog(@"%@",self.sortedContactsArray);
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {

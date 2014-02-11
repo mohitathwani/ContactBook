@@ -13,7 +13,7 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    NSLog(@"%d",[CBPLISTManager copyPLISTFileToDocuments]);
+    [CBPLISTManager copyPLISTFileToDocuments];
     
     return YES;
 }
