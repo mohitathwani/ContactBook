@@ -29,9 +29,6 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath:@"Contacts.plist"]];
-    
-    NSLog(@"%@", self.contactsArray);
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -48,7 +45,7 @@
 
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return 10;
+    return [self.contactsArray count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
