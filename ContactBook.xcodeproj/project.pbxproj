@@ -22,7 +22,8 @@
 		063878DB18A91D3D001FB60E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 063878D918A91D3D001FB60E /* InfoPlist.strings */; };
 		063878DD18A91D3D001FB60E /* ContactBookTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 063878DC18A91D3D001FB60E /* ContactBookTests.m */; };
 		063878E818A91EDD001FB60E /* CBContactsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 063878E718A91EDD001FB60E /* CBContactsCollectionViewController.m */; };
-		063878EA18A9221E001FB60E /* ContactsBundle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063878E918A9221E001FB60E /* ContactsBundle.plist */; };
+		063878EA18A9221E001FB60E /* Contacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063878E918A9221E001FB60E /* Contacts.plist */; };
+		E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +57,9 @@
 		063878DC18A91D3D001FB60E /* ContactBookTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ContactBookTests.m; sourceTree = "<group>"; };
 		063878E618A91EDD001FB60E /* CBContactsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContactsCollectionViewController.h; sourceTree = "<group>"; };
 		063878E718A91EDD001FB60E /* CBContactsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBContactsCollectionViewController.m; sourceTree = "<group>"; };
-		063878E918A9221E001FB60E /* ContactsBundle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ContactsBundle.plist; sourceTree = "<group>"; };
+		063878E918A9221E001FB60E /* Contacts.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Contacts.plist; sourceTree = "<group>"; };
+		E4D1BD6418AA295200CB34BE /* CBPLISTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPLISTManager.h; sourceTree = "<group>"; };
+		E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPLISTManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,7 +127,9 @@
 				063878B518A91D3D001FB60E /* Supporting Files */,
 				063878E618A91EDD001FB60E /* CBContactsCollectionViewController.h */,
 				063878E718A91EDD001FB60E /* CBContactsCollectionViewController.m */,
-				063878E918A9221E001FB60E /* ContactsBundle.plist */,
+				063878E918A9221E001FB60E /* Contacts.plist */,
+				E4D1BD6418AA295200CB34BE /* CBPLISTManager.h */,
+				E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */,
 			);
 			path = ContactBook;
 			sourceTree = "<group>";
@@ -238,7 +243,7 @@
 				063878C518A91D3D001FB60E /* Main_iPad.storyboard in Resources */,
 				063878CA18A91D3D001FB60E /* Images.xcassets in Resources */,
 				063878C218A91D3D001FB60E /* Main_iPhone.storyboard in Resources */,
-				063878EA18A9221E001FB60E /* ContactsBundle.plist in Resources */,
+				063878EA18A9221E001FB60E /* Contacts.plist in Resources */,
 				063878B918A91D3D001FB60E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,6 +266,7 @@
 				063878E818A91EDD001FB60E /* CBContactsCollectionViewController.m in Sources */,
 				063878BB18A91D3D001FB60E /* main.m in Sources */,
 				063878BF18A91D3D001FB60E /* CBAppDelegate.m in Sources */,
+				E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,6 +485,7 @@
 				063878E218A91D3D001FB60E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		063878E318A91D3D001FB60E /* Build configuration list for PBXNativeTarget "ContactBookTests" */ = {
 			isa = XCConfigurationList;
@@ -487,6 +494,7 @@
 				063878E518A91D3D001FB60E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

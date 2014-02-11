@@ -10,6 +10,7 @@
 
 @interface CBContactsCollectionViewController ()
 
+@property (strong, nonatomic) NSMutableArray *contactsArray;
 @end
 
 @implementation CBContactsCollectionViewController
@@ -27,10 +28,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath:@"Contacts.plist"]];
     
-    NSArray *contactsBundleArray = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"ContactsBundle" ofType:@"plist"]];
-    
-    
+    NSLog(@"%@", self.contactsArray);
     
 }
 
