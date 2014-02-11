@@ -10,19 +10,17 @@
 
 @interface CBAddContactViewController ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UITextField *firstNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *telephoneTextField;
+@property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+- (IBAction)dismissScreen:(UIBarButtonItem *)sender;
+
 
 @end
 
 @implementation CBAddContactViewController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -35,10 +33,53 @@
     
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
+
+
+- (IBAction)dismissScreen:(UIBarButtonItem *)sender {
+    
+    if ([sender.title isEqualToString:@"Save"]) {
+        [self saveContact];
+    }
+    
+    else [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)saveContact {
+    
+    if ([self validateInput]) {
+        //save
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
+    
+}
+
+-(BOOL)validateInput {
+    
+    if ([self.firstNameTextField.text length] >= 5 && [self.lastNameTextField.text length] >= 5 && [self.telephoneTextField.text length] >= 5) {
+        return YES;
+    }
+    
+    else {
+        if ([self.firstNameTextField.text length] < 5) {
+            self.firstNameTextField.textColor = [UIColor redColor];
+            
+        }
+        
+        if ([self.lastNameTextField.text length] < 5) {
+            self.lastNameTextField.textColor = [UIColor redColor];
+            
+        }
+        
+        if ([self.telephoneTextField.text length] < 5) {
+            self.telephoneTextField.textColor = [UIColor redColor];
+            
+        }
+        return NO;
+    }
+}
 @end

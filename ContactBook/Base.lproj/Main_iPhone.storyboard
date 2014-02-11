@@ -124,34 +124,58 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vuw-nO-dLa" id="SjZ-U1-HSI"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hGi-mq-0Zn">
                                 <rect key="frame" x="123" y="121" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vuw-nO-dLa" id="TTe-xz-4Z1"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telephone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LMN-03-9hh">
                                 <rect key="frame" x="123" y="207" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vuw-nO-dLa" id="EjL-az-CSY"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0Nt-XZ-Rqb">
                                 <rect key="frame" x="123" y="245" width="177" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Vuw-nO-dLa" id="vDx-uR-qac"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add new contact" id="ibR-9e-GjV">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="s1J-mU-1xZ"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="i5o-bt-I5O"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="s1J-mU-1xZ">
+                            <connections>
+                                <action selector="dismissScreen:" destination="Vuw-nO-dLa" id="5DP-GO-Lje"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="i5o-bt-I5O">
+                            <connections>
+                                <action selector="dismissScreen:" destination="Vuw-nO-dLa" id="j4L-Z1-3ZO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="0Nt-XZ-Rqb" id="KEi-X4-3ch"/>
+                        <outlet property="firstNameTextField" destination="KZx-36-xMW" id="KdR-5J-2vu"/>
                         <outlet property="imageView" destination="cH1-8d-VDq" id="iHe-Da-S45"/>
+                        <outlet property="lastNameTextField" destination="hGi-mq-0Zn" id="DxX-r3-X6y"/>
+                        <outlet property="telephoneTextField" destination="LMN-03-9hh" id="dEs-bY-EOe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fYv-1u-whF" userLabel="First Responder" sceneMemberID="firstResponder"/>

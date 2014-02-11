@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CBAddContactViewController : UIViewController
+@interface CBAddContactViewController : UIViewController<UITextFieldDelegate>
 
 @end
