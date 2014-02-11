@@ -48,7 +48,9 @@
                             <outlet property="delegate" destination="5Bd-Mo-bkH" id="4Hv-Mz-1Ok"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Contacts" id="i7x-Qn-gkO"/>
+                    <navigationItem key="navigationItem" title="Contacts" id="i7x-Qn-gkO">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GLR-y0-mGs"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cxh-Bv-w5q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
