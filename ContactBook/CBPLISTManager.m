@@ -45,7 +45,7 @@
 +(NSMutableArray *)sortArray:(NSMutableArray *)array withKey:(NSString *)key ascending:(BOOL)ascending {
     NSMutableArray *sortedArray;
     
-    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending];
+    NSSortDescriptor *descriptor = [[NSSortDescriptor alloc] initWithKey:key ascending:ascending selector:@selector(caseInsensitiveCompare:)];
                                     
     sortedArray = [[array sortedArrayUsingDescriptors:@[descriptor]] mutableCopy];
     
