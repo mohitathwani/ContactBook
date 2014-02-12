@@ -75,6 +75,12 @@
     cell.nameLabel.text = [NSString stringWithFormat:@"%@\n%@", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]];
     
     if (self.sortedContactsArray[indexPath.row][@"image"] != nil) {
+        NSData *imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]]]];
+        UIImage *image =  [UIImage imageWithData:imageData];
+        cell.imageView.image = image;
+    }
+    
+    else {
         NSData *imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:@"no_icon.png"]];
         UIImage *image =  [UIImage imageWithData:imageData];
         cell.imageView.image = image;

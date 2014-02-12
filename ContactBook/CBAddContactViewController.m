@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *telephoneTextField;
 @property (weak, nonatomic) IBOutlet UITextField *emailTextField;
+@property (strong, nonatomic) NSData *pngData;
 - (IBAction)dismissScreen:(UIBarButtonItem *)sender;
 
 
@@ -53,7 +54,16 @@
     
     if ([self validateInput]) {
         
-        NSDictionary *newEntry = @{@"firstName": self.firstNameTextField.text, @"lastName": self.lastNameTextField.text, @"telephone": self.telephoneTextField.text, @"email": self.emailTextField.text};
+        if (self.pngData) {
+            [self.pngData writeToFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png",self.firstNameTextField.text,self.lastNameTextField.text]] atomically:YES];
+        }
+        
+        NSDictionary *newEntry;
+        if (self.imageView.image == nil) {
+            newEntry = @{@"firstName": self.firstNameTextField.text, @"lastName": self.lastNameTextField.text, @"telephone": self.telephoneTextField.text, @"email": self.emailTextField.text};
+        }
+        else newEntry = @{@"firstName": self.firstNameTextField.text, @"lastName": self.lastNameTextField.text, @"telephone": self.telephoneTextField.text, @"email": self.emailTextField.text, @"image":[NSString stringWithFormat:@"%@%@.png",self.firstNameTextField.text,self.lastNameTextField.text]};
+        
         
         [CBPLISTManager updatePLISTWithEntry:newEntry];
         [self dismissViewControllerAnimated:YES completion:nil];
@@ -128,11 +138,7 @@
     
     self.imageView.image = clickedImage;
     
-    NSData *pngData = UIImagePNGRepresentation(clickedImage);
-    [pngData writeToFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png",self.firstNameTextField.text,self.lastNameTextField.text]] atomically:YES];
-    
-    
-    
+    self.pngData = UIImagePNGRepresentation(clickedImage);
     [picker dismissViewControllerAnimated:YES completion:nil];
 }
 

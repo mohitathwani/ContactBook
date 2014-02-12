@@ -3,8 +3,6 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>image</key>
-		<string></string>
 		<key>firstName</key>
 		<string>Mohit</string>
 		<key>lastName</key>
@@ -17,8 +15,6 @@
 	<dict>
 		<key>firstName</key>
 		<string>Ronny</string>
-		<key>image</key>
-		<string></string>
 		<key>lastName</key>
 		<string>Screwwala</string>
 		<key>telephone</key>
