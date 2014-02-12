@@ -85,4 +85,9 @@
         return NO;
     }
 }
+- (IBAction)tapped:(UITapGestureRecognizer *)sender {
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose photo from" delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Camera Roll", nil];
+    [actionSheet showInView:self.view];
+}
 @end
