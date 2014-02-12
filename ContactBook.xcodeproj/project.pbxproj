@@ -25,6 +25,7 @@
 		063878EA18A9221E001FB60E /* Contacts.plist in Resources */ = {isa = PBXBuildFile; fileRef = 063878E918A9221E001FB60E /* Contacts.plist */; };
 		0659016118AA62DC00775E47 /* CBAddContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0659016018AA62DC00775E47 /* CBAddContactViewController.m */; };
 		E45CD94018AA3B71007B0AE0 /* CBContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E45CD93F18AA3B71007B0AE0 /* CBContactCell.m */; };
+		E45CD95018AB475F007B0AE0 /* no_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E45CD94F18AB475F007B0AE0 /* no_icon.png */; };
 		E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		0659016018AA62DC00775E47 /* CBAddContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBAddContactViewController.m; sourceTree = "<group>"; };
 		E45CD93E18AA3B71007B0AE0 /* CBContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBContactCell.h; sourceTree = "<group>"; };
 		E45CD93F18AA3B71007B0AE0 /* CBContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBContactCell.m; sourceTree = "<group>"; };
+		E45CD94F18AB475F007B0AE0 /* no_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_icon.png; sourceTree = "<group>"; };
 		E4D1BD6418AA295200CB34BE /* CBPLISTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPLISTManager.h; sourceTree = "<group>"; };
 		E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPLISTManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -125,6 +127,7 @@
 		063878B418A91D3D001FB60E /* ContactBook */ = {
 			isa = PBXGroup;
 			children = (
+				E45CD94F18AB475F007B0AE0 /* no_icon.png */,
 				063878BD18A91D3D001FB60E /* CBAppDelegate.h */,
 				063878BE18A91D3D001FB60E /* CBAppDelegate.m */,
 				063878C018A91D3D001FB60E /* Main_iPhone.storyboard */,
@@ -253,6 +256,7 @@
 				063878C518A91D3D001FB60E /* Main_iPad.storyboard in Resources */,
 				063878CA18A91D3D001FB60E /* Images.xcassets in Resources */,
 				063878C218A91D3D001FB60E /* Main_iPhone.storyboard in Resources */,
+				E45CD95018AB475F007B0AE0 /* no_icon.png in Resources */,
 				063878EA18A9221E001FB60E /* Contacts.plist in Resources */,
 				063878B918A91D3D001FB60E /* InfoPlist.strings in Resources */,
 			);

@@ -14,6 +14,7 @@
 {
     // Override point for customization after application launch.
     [CBPLISTManager copyPLISTFileToDocuments];
+    [CBPLISTManager createImagesFolder];
     
     return YES;
 }

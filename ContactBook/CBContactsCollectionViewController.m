@@ -45,7 +45,6 @@
 }
 - (void)reloadCollectionView:(NSNotification *)notification {
     [self loadData];
-    
     [self.collectionView reloadData];
     [self.collectionView reloadItemsAtIndexPaths:[self.collectionView indexPathsForVisibleItems]];
 }
@@ -74,6 +73,8 @@
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CBContactCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"contactCell" forIndexPath:indexPath];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@\n%@", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]];
+    
+    cell.imageView.image = [UIImage imageNamed:self.sortedContactsArray[indexPath.row][@"image"]];
 
     return cell;
 }

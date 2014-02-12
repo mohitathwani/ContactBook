@@ -75,4 +75,28 @@
     
     return contactsArray;
 }
+
++(void)createImagesFolder {
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[CBPLISTManager getImagesFolderPath]]) {
+        
+        [[NSFileManager defaultManager] createDirectoryAtPath:[CBPLISTManager getImagesFolderPath] withIntermediateDirectories:NO attributes:nil error:nil]; //Create folder
+        
+        NSString *defaultImagePath = [[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:@"no_icon.png"];
+        
+        NSData *imageDataToStore = UIImagePNGRepresentation([UIImage imageNamed:@"no_icon.png"]);
+        [imageDataToStore writeToFile:defaultImagePath atomically:YES];
+    
+    
+}
+    
+}
+
++(NSString *)getImagesFolderPath {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentsDirectory = [paths objectAtIndex:0]; // Get documents folder
+    NSString *dataPath = [documentsDirectory stringByAppendingPathComponent:@"/Images"];
+    
+    return dataPath;
+}
 @end

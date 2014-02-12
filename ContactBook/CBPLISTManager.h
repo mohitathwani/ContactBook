@@ -15,4 +15,7 @@
 + (NSString*) getPlistPath;
 +(NSMutableArray *)sortArray:(NSMutableArray *)array withKey:(NSString *)key ascending:(BOOL)ascending;
 +(void)updatePLISTWithEntry:(NSDictionary *)newEntry;
+
++(void)createImagesFolder;
++(NSString *)getImagesFolderPath;
 @end
