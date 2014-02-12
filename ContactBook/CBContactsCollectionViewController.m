@@ -36,8 +36,22 @@
                                              selector:@selector(reloadCollectionView:)
                                                  name:@"newEntryAdded" object:nil];
     
+    UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(activateDeletionMode:)];
+//    longPress.delegate = self;
+    [self.collectionView addGestureRecognizer:longPress];
+    
 }
 
+- (void) activateDeletionMode:(UILongPressGestureRecognizer *)gestureRecognizer {
+    NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:[gestureRecognizer locationInView:self.collectionView]];
+    
+    if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        [self.sortedContactsArray removeObjectAtIndex:indexPath.row];
+        [self.collectionView reloadData];
+        [CBPLISTManager updatePLISTWithSortedArray:self.sortedContactsArray];
+    }
+    
+}
 - (void) loadData {
     self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath]];
     
