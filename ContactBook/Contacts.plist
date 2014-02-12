@@ -4,7 +4,7 @@
 <array>
 	<dict>
 		<key>image</key>
-		<string>no_icon.png</string>
+		<string></string>
 		<key>firstName</key>
 		<string>Mohit</string>
 		<key>lastName</key>
@@ -18,7 +18,7 @@
 		<key>firstName</key>
 		<string>Ronny</string>
 		<key>image</key>
-		<string>no_icon.png</string>
+		<string></string>
 		<key>lastName</key>
 		<string>Screwwala</string>
 		<key>telephone</key>

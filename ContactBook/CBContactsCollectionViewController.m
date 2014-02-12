@@ -74,7 +74,12 @@
     CBContactCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"contactCell" forIndexPath:indexPath];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@\n%@", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]];
     
-    cell.imageView.image = [UIImage imageNamed:self.sortedContactsArray[indexPath.row][@"image"]];
+    if (self.sortedContactsArray[indexPath.row][@"image"] != nil) {
+        NSData *imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:@"no_icon.png"]];
+        UIImage *image =  [UIImage imageWithData:imageData];
+        cell.imageView.image = image;
+    }
+    
 
     return cell;
 }
