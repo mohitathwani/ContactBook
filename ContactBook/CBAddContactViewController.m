@@ -118,8 +118,15 @@
     }
     
     else if (buttonIndex == 1) {
-        //show camera roll
-        NSLog(@"Roll");
+        
+        NSLog(@"%d", [UIImagePickerController isSourceTypeAvailable:
+                      UIImagePickerControllerSourceTypePhotoLibrary]);
+        UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+        controller.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        controller.mediaTypes = @[(NSString *)kUTTypeImage];
+        controller.allowsEditing = YES;
+        controller.delegate = self;
+        [self presentViewController:controller animated:YES completion:nil];
     }
 }
 
