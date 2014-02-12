@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface CBAddContactViewController : UIViewController<UITextFieldDelegate>
+@interface CBAddContactViewController : UIViewController<UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @end

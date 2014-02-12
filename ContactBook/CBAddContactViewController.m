@@ -85,9 +85,58 @@
         return NO;
     }
 }
+
 - (IBAction)tapped:(UITapGestureRecognizer *)sender {
     
-    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose photo from" delegate:nil cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Camera Roll", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose photo from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Camera Roll", nil];
+    
     [actionSheet showInView:self.view];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if (buttonIndex == 0) {
+        
+        if ([self isCameraAvailable]) {
+            UIImagePickerController *controller = [[UIImagePickerController alloc] init];
+            controller.sourceType = UIImagePickerControllerSourceTypeCamera;
+            controller.mediaTypes = @[(NSString *)kUTTypeImage];
+            controller.allowsEditing = YES;
+            controller.delegate = self;
+            [self presentViewController:controller animated:YES completion:nil];
+        }
+    }
+    
+    else if (buttonIndex == 1) {
+        //show camera roll
+        NSLog(@"Roll");
+    }
+}
+
+-(BOOL)isCameraAvailable {
+    return [UIImagePickerController isSourceTypeAvailable:
+            UIImagePickerControllerSourceTypeCamera];
+}
+
+
+- (void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    
+    NSDictionary *metadata = info[UIImagePickerControllerMediaMetadata];
+    UIImage *clickedImage = info[UIImagePickerControllerEditedImage];
+    NSLog(@"Image Metadata = %@", metadata);
+    NSLog(@"Image = %@", clickedImage);
+    
+    self.imageView.image = clickedImage;
+    
+    NSData *pngData = UIImagePNGRepresentation(clickedImage);
+    [pngData writeToFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png",self.firstNameTextField.text,self.lastNameTextField.text]] atomically:YES];
+    
+    
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker{ NSLog(@"Picker was cancelled");
+    [picker dismissViewControllerAnimated:YES completion:nil];
 }
 @end
