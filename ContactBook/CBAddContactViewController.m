@@ -52,7 +52,10 @@
 -(void)saveContact {
     
     if ([self validateInput]) {
-        //save
+        
+        NSDictionary *newEntry = @{@"firstName": self.firstNameTextField.text, @"lastName": self.lastNameTextField.text, @"telephone": self.telephoneTextField.text, @"email": self.emailTextField.text};
+        
+        [CBPLISTManager updatePLISTWithEntry:newEntry];
         [self dismissViewControllerAnimated:YES completion:nil];
     }
     
