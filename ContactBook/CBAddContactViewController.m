@@ -74,22 +74,22 @@
 
 -(BOOL)validateInput {
     
-    if ([self.firstNameTextField.text length] >= 5 && [self.lastNameTextField.text length] >= 5 && [self.telephoneTextField.text length] >= 5) {
+    if ([self.firstNameTextField.text length] >= 1 && [self.lastNameTextField.text length] >= 1 && [self.telephoneTextField.text length] >= 1) {
         return YES;
     }
     
     else {
-        if ([self.firstNameTextField.text length] < 5) {
+        if ([self.firstNameTextField.text length] < 1) {
             self.firstNameTextField.textColor = [UIColor redColor];
             
         }
         
-        if ([self.lastNameTextField.text length] < 5) {
+        if ([self.lastNameTextField.text length] < 1) {
             self.lastNameTextField.textColor = [UIColor redColor];
             
         }
         
-        if ([self.telephoneTextField.text length] < 5) {
+        if ([self.telephoneTextField.text length] < 1) {
             self.telephoneTextField.textColor = [UIColor redColor];
             
         }
