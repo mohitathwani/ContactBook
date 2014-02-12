@@ -52,11 +52,99 @@
                             <outlet property="delegate" destination="PoT-V4-0Ok" id="3Mo-Wz-PVZ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="pZo-Rh-OlF"/>
+                    <navigationItem key="navigationItem" id="pZo-Rh-OlF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Suv-mW-Ogr">
+                            <connections>
+                                <segue destination="ocb-Gu-mjK" kind="popover" popoverAnchorBarButtonItem="Suv-mW-Ogr" id="7Ov-iH-AZG">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8W-MV-35c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1003" y="-101"/>
+        </scene>
+        <!--Add Contact View Controller-->
+        <scene sceneID="dT5-wF-2pO">
+            <objects>
+                <viewController modalPresentationStyle="formSheet" id="ocb-Gu-mjK" customClass="CBAddContactViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TkO-o6-837"/>
+                        <viewControllerLayoutGuide type="bottom" id="sLS-Aj-z94"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h83-I7-9t1">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="500"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="g93-vJ-1E3">
+                                <rect key="frame" x="20" y="58" width="110" height="110"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="add photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ht-y9-qiV">
+                                <rect key="frame" x="44" y="135" width="62" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="200" placeholderIntrinsicHeight="39" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8I3-DP-WVa">
+                                <rect key="frame" x="137" y="68" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FH1-Yl-QJ4">
+                                <rect key="frame" x="137" y="106" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Telephone" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9s9-k4-72u">
+                                <rect key="frame" x="137" y="192" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-m9-XEh">
+                                <rect key="frame" x="137" y="230" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
+                            </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Re-zc-VcU">
+                                <rect key="frame" x="0.0" y="456" width="357" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="Cancel" id="QGK-7E-1NZ">
+                                        <connections>
+                                            <action selector="dismissScreen:" destination="ocb-Gu-mjK" id="aqg-E6-uPZ"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Bc9-U5-Awf"/>
+                                    <barButtonItem title="Save" id="Kmh-74-nv1">
+                                        <connections>
+                                            <action selector="dismissScreen:" destination="ocb-Gu-mjK" id="9Kz-6J-xAh"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="6wW-m9-XEh" id="gL1-L8-m4f"/>
+                        <outlet property="firstNameTextField" destination="8I3-DP-WVa" id="jcf-98-cxV"/>
+                        <outlet property="imageView" destination="g93-vJ-1E3" id="OFa-QK-TZV"/>
+                        <outlet property="lastNameTextField" destination="FH1-Yl-QJ4" id="Piy-A0-Rqa"/>
+                        <outlet property="telephoneTextField" destination="9s9-k4-72u" id="fAo-ej-hzX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOP-oe-9sp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904" y="-427"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QeV-zD-klE">
