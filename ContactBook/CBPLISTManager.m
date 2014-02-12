@@ -66,6 +66,8 @@
     [contactsArray addObject:newEntry];
     [CBPLISTManager updatePLISTWithSortedArray:contactsArray];
     
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"newEntryAdded" object:nil];
+    
 }
 
 +(NSMutableArray *)contactsArrayFromPLIST {

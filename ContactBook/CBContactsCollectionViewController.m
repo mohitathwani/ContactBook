@@ -29,10 +29,25 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    [self loadData];
+    
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadCollectionView:)
+                                                 name:@"newEntryAdded" object:nil];
+    
+}
+
+- (void) loadData {
     self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath]];
     
     self.sortedContactsArray = [CBPLISTManager sortArray:self.contactsArray withKey:@"firstName" ascending:YES];
+}
+- (void)reloadCollectionView:(NSNotification *)notification {
+    [self loadData];
     
+    [self.collectionView reloadData];
+    [self.collectionView reloadItemsAtIndexPaths:[self.collectionView indexPathsForVisibleItems]];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -49,7 +64,7 @@
 
 #pragma mark - UICollectionView Datasource
 - (NSInteger)collectionView:(UICollectionView *)view numberOfItemsInSection:(NSInteger)section {
-    return [self.contactsArray count];
+    return [self.sortedContactsArray count];
 }
 
 - (NSInteger)numberOfSectionsInCollectionView: (UICollectionView *)collectionView {
