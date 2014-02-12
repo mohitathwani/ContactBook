@@ -30,7 +30,8 @@
     
     self.imageView.layer.borderColor = [[UIColor grayColor] CGColor];
     self.imageView.layer.borderWidth = 1.0f;
-    self.imageView.layer.cornerRadius = 45.0f;
+    self.imageView.layer.cornerRadius = 48.0f;
+    self.imageView.layer.masksToBounds = YES;
     
 }
 
