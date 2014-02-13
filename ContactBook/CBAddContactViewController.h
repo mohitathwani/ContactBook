@@ -9,6 +9,14 @@
 #import <UIKit/UIKit.h>
 #import <MobileCoreServices/MobileCoreServices.h>
 
+@protocol CBAddContactViewControllerDelegate <NSObject>
+
+@optional
+-(void)hidePopOver;
+
+@end
 @interface CBAddContactViewController : UIViewController<UITextFieldDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+
+@property(weak, nonatomic) id <CBAddContactViewControllerDelegate> delegate;
 
 @end

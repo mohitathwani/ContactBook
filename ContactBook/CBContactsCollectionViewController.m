@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSMutableArray *contactsArray;
 @property (strong, nonatomic) NSMutableArray *sortedContactsArray;
+@property (weak, nonatomic) UIPopoverController *popOverController;
 @end
 
 @implementation CBContactsCollectionViewController
@@ -115,4 +116,18 @@
  {
  return [[UICollectionReusableView alloc] init];
  }*/
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"addContactPopOver"]) {
+        if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
+            self.popOverController = [(UIStoryboardPopoverSegue*)segue popoverController];
+            [segue.destinationViewController setDelegate:self];
+        }
+    }
+}
+
+-(void)hidePopOver {
+    [self.popOverController dismissPopoverAnimated:YES];
+}
 @end

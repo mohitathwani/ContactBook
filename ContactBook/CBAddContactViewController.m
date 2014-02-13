@@ -48,7 +48,10 @@
         [self saveContact];
     }
     
-    else [self dismissViewControllerAnimated:YES completion:nil];
+    else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        [self.delegate hidePopOver];
+    }
 }
 
 -(void)saveContact {
@@ -68,6 +71,7 @@
         
         [CBPLISTManager updatePLISTWithEntry:newEntry];
         [self dismissViewControllerAnimated:YES completion:nil];
+        [self.delegate hidePopOver];
     }
     
 }

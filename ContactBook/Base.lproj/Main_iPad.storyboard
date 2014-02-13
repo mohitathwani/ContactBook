@@ -55,7 +55,7 @@
                     <navigationItem key="navigationItem" id="pZo-Rh-OlF">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Suv-mW-Ogr">
                             <connections>
-                                <segue destination="ocb-Gu-mjK" kind="popover" popoverAnchorBarButtonItem="Suv-mW-Ogr" id="7Ov-iH-AZG">
+                                <segue destination="ocb-Gu-mjK" kind="popover" identifier="addContactPopOver" popoverAnchorBarButtonItem="Suv-mW-Ogr" id="7Ov-iH-AZG">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
                             </connections>

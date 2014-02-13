@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "CBContactCell.h"
+#import "CBAddContactViewController.h"
 
-@interface CBContactsCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface CBContactsCollectionViewController : UICollectionViewController<UICollectionViewDataSource, UICollectionViewDelegate, CBAddContactViewControllerDelegate>
 
 @end
