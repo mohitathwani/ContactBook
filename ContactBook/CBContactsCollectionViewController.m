@@ -125,6 +125,16 @@
             [segue.destinationViewController setDelegate:self];
         }
     }
+    
+    else if ([segue.identifier isEqualToString:@"showDetailsPhone"]) {
+        CBDetailsViewController *dVC = (CBDetailsViewController *)[segue destinationViewController];
+        NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
+        
+        dVC.firstName = self.sortedContactsArray[indexPath.row][@"firstName"];
+        dVC.lastName = self.sortedContactsArray[indexPath.row][@"lastName"];
+        dVC.telephone = self.sortedContactsArray[indexPath.row][@"telephone"];
+        dVC.email = self.sortedContactsArray[indexPath.row][@"email"];
+    }
 }
 
 -(void)hidePopOver {
