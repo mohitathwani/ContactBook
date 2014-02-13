@@ -82,6 +82,9 @@
                                 <rect key="frame" x="20" y="58" width="110" height="110"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="gZo-Ft-9dm" appends="YES" id="lHT-VH-ICp"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="add photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ht-y9-qiV">
                                 <rect key="frame" x="44" y="135" width="62" height="16"/>
@@ -143,6 +146,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOP-oe-9sp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="gZo-Ft-9dm">
+                    <connections>
+                        <action selector="tapped:" destination="ocb-Gu-mjK" id="yCy-Pg-z9h"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1904" y="-427"/>
         </scene>

@@ -106,6 +106,7 @@
     UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Choose photo from" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera",@"Camera Roll", nil];
     
     [actionSheet showInView:self.view];
+    NSLog(@"tapped");
 }
 
 - (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
