@@ -12,19 +12,12 @@
 
 @property (strong, nonatomic) NSMutableArray *contactsArray;
 @property (strong, nonatomic) NSMutableArray *sortedContactsArray;
+
+//Need access to the popovercontroller in iPad so that it can be dismissed by the buttons.
 @property (weak, nonatomic) UIPopoverController *popOverController;
 @end
 
 @implementation CBContactsCollectionViewController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -32,48 +25,51 @@
 	// Do any additional setup after loading the view.
     [self loadData];
     
-    
+    //Start listening to new entry added notification
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(reloadCollectionView:)
                                                  name:@"newEntryAdded" object:nil];
     
+    //Setting up longpress gesture to delete entries
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(activateDeletionMode:)];
-//    longPress.delegate = self;
     [self.collectionView addGestureRecognizer:longPress];
     
 }
 
+/**
+ *  Loads the data from the PLIST file
+ */
+- (void) loadData {
+    self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath]];
+    
+    self.sortedContactsArray = [CBPLISTManager sortArray:self.contactsArray withKey:@"firstName" ascending:YES];
+}
+
+/**
+ *  This method is responsible for deleting the entry on which long press occured
+ *
+ *  @param gestureRecognizer long press gesture
+ */
 - (void) activateDeletionMode:(UILongPressGestureRecognizer *)gestureRecognizer {
+    
+    // Get the index path of the cell on which long press occured
     NSIndexPath *indexPath = [self.collectionView indexPathForItemAtPoint:[gestureRecognizer locationInView:self.collectionView]];
     
     if (gestureRecognizer.state == UIGestureRecognizerStateBegan) {
+        
+        //Have to check for UIGestureRecognizerStateBegan to prevent multiple entries from being deleted.
         [self.sortedContactsArray removeObjectAtIndex:indexPath.row];
         [self.collectionView reloadData];
         [CBPLISTManager updatePLISTWithSortedArray:self.sortedContactsArray];
     }
     
 }
-- (void) loadData {
-    self.contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath]];
-    
-    self.sortedContactsArray = [CBPLISTManager sortArray:self.contactsArray withKey:@"firstName" ascending:YES];
-}
+
+
 - (void)reloadCollectionView:(NSNotification *)notification {
     [self loadData];
     [self.collectionView reloadData];
-    [self.collectionView reloadItemsAtIndexPaths:[self.collectionView indexPathsForVisibleItems]];
-}
-
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    
-    
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+//    [self.collectionView reloadItemsAtIndexPaths:[self.collectionView indexPathsForVisibleItems]];
 }
 
 #pragma mark - UICollectionView Datasource
@@ -86,24 +82,27 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)cv cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     CBContactCell *cell = [cv dequeueReusableCellWithReuseIdentifier:@"contactCell" forIndexPath:indexPath];
     cell.nameLabel.text = [NSString stringWithFormat:@"%@\n%@", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]];
     
     
     [cell.imageView makeCircular];
     
+    NSData *imageData;
+    UIImage *contactImage;
+    
     if (self.sortedContactsArray[indexPath.row][@"image"] != nil) {
-        NSData *imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]]]];
-        UIImage *image =  [UIImage imageWithData:imageData];
-        cell.imageView.image = image;
+        imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]]]];
+        contactImage =  [UIImage imageWithData:imageData];
     }
     
     else {
-        NSData *imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:@"no_icon.png"]];
-        UIImage *image =  [UIImage imageWithData:imageData];
-        cell.imageView.image = image;
+        imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:@"no_icon.png"]];
+        contactImage =  [UIImage imageWithData:imageData];
     }
     
+    cell.imageView.image = contactImage;
 
     return cell;
 }
@@ -134,6 +133,9 @@
     }
 }
 
+/**
+ *  Delegate call back from the popover VC to hide the pop over
+ */
 -(void)hidePopOver {
     [self.popOverController dismissPopoverAnimated:YES];
 }
