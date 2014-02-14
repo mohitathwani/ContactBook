@@ -10,19 +10,6 @@
 
 @implementation CBPLISTManager
 
-
-
-+ (NSString*) getPlistPath{
-    //Search for standard documents using NSSearchPathForDirectoriesInDomains
-    //First Param = Searching the documents directory
-    //Second Param = Searching the Users directory and not the System
-    //Expand any tildes and identify home directories.
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
-    NSString *documentsDir = [paths objectAtIndex:0];
-    return [documentsDir stringByAppendingPathComponent:@"Contacts.plist"];
-}
-
-
 +(BOOL)copyPLISTFileToDocuments {
     
     NSFileManager *fileManager = [NSFileManager defaultManager];
@@ -40,6 +27,16 @@
     
     return copyResult;
     
+}
+
++ (NSString*) getPlistPath{
+    //Search for standard documents using NSSearchPathForDirectoriesInDomains
+    //First Param = Searching the documents directory
+    //Second Param = Searching the Users directory and not the System
+    //Expand any tildes and identify home directories.
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory , NSUserDomainMask, YES);
+    NSString *documentsDir = [paths objectAtIndex:0];
+    return [documentsDir stringByAppendingPathComponent:@"Contacts.plist"];
 }
 
 +(NSMutableArray *)sortArray:(NSMutableArray *)array withKey:(NSString *)key ascending:(BOOL)ascending {
@@ -70,6 +67,11 @@
     
 }
 
+/**
+ *  Gets the latest contacts from the PLIST
+ *
+ *  @return returns the latest array from the PLIST file
+ */
 +(NSMutableArray *)contactsArrayFromPLIST {
     NSMutableArray *contactsArray = [NSMutableArray arrayWithContentsOfFile:[CBPLISTManager getPlistPath]];
     
