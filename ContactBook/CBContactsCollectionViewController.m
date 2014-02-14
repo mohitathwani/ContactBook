@@ -118,6 +118,8 @@
     if ([segue.identifier isEqualToString:@"addContactPopOver"]) {
         if ([segue isKindOfClass:[UIStoryboardPopoverSegue class]]) {
             self.popOverController = [(UIStoryboardPopoverSegue*)segue popoverController];
+            
+            //Assign yourself to be the delegate so that you can get the call back to hide the pop pver
             [segue.destinationViewController setDelegate:self];
         }
     }

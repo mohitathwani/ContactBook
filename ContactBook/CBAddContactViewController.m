@@ -51,6 +51,9 @@
     }
 }
 
+/**
+ *  Save the contact to the PLIST
+ */
 -(void)saveContact {
     
     if ([self validateInput]) {
@@ -73,6 +76,11 @@
     
 }
 
+/**
+ *  Validate the input in the text fields
+ *
+ *  @return YES or NO
+ */
 -(BOOL)validateInput {
     
     if ([self.firstNameTextField.text length] >= 1 && [self.lastNameTextField.text length] >= 1 && [self.telephoneTextField.text length] >= 1) {

@@ -12,6 +12,9 @@
 @protocol CBAddContactViewControllerDelegate <NSObject>
 
 @optional
+/**
+ *  Delegate call back to instruct the presenting VC to hide the pop over
+ */
 -(void)hidePopOver;
 
 @end

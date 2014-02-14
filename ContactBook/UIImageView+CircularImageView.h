@@ -10,5 +10,8 @@
 
 @interface UIImageView (CircularImageView)
 
+/**
+ *  Makes the image views circular
+ */
 -(void) makeCircular;
 @end
