@@ -90,10 +90,7 @@
     cell.nameLabel.text = [NSString stringWithFormat:@"%@\n%@", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]];
     
     
-    cell.imageView.layer.cornerRadius = cell.imageView.frame.size.width/2;
-    cell.imageView.layer.masksToBounds = YES;
-    cell.imageView.layer.borderColor = [[UIColor grayColor] CGColor];
-    cell.imageView.layer.borderWidth = 1.0f;
+    [cell.imageView makeCircular];
     
     if (self.sortedContactsArray[indexPath.row][@"image"] != nil) {
         NSData *imageData = [[NSData alloc] initWithContentsOfFile:[[CBPLISTManager getImagesFolderPath] stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%@.png", self.sortedContactsArray[indexPath.row][@"firstName"], self.sortedContactsArray[indexPath.row][@"lastName"]]]];

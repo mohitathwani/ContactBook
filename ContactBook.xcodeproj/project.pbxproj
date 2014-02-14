@@ -28,6 +28,7 @@
 		E45CD95018AB475F007B0AE0 /* no_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = E45CD94F18AB475F007B0AE0 /* no_icon.png */; };
 		E4B86CE418ACCD8E006A9A1E /* CBDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4B86CE318ACCD8E006A9A1E /* CBDetailsViewController.m */; };
 		E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */ = {isa = PBXBuildFile; fileRef = E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */; };
+		E4DFC8A218AE181900DA462B /* UIImageView+CircularImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DFC8A118AE181900DA462B /* UIImageView+CircularImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,8 @@
 		E4B86CE318ACCD8E006A9A1E /* CBDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBDetailsViewController.m; sourceTree = "<group>"; };
 		E4D1BD6418AA295200CB34BE /* CBPLISTManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CBPLISTManager.h; sourceTree = "<group>"; };
 		E4D1BD6518AA295300CB34BE /* CBPLISTManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CBPLISTManager.m; sourceTree = "<group>"; };
+		E4DFC8A018AE181900DA462B /* UIImageView+CircularImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+CircularImageView.h"; sourceTree = "<group>"; };
+		E4DFC8A118AE181900DA462B /* UIImageView+CircularImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+CircularImageView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,6 +151,8 @@
 				0659016018AA62DC00775E47 /* CBAddContactViewController.m */,
 				E4B86CE218ACCD8E006A9A1E /* CBDetailsViewController.h */,
 				E4B86CE318ACCD8E006A9A1E /* CBDetailsViewController.m */,
+				E4DFC8A018AE181900DA462B /* UIImageView+CircularImageView.h */,
+				E4DFC8A118AE181900DA462B /* UIImageView+CircularImageView.m */,
 			);
 			path = ContactBook;
 			sourceTree = "<group>";
@@ -286,6 +291,7 @@
 				063878E818A91EDD001FB60E /* CBContactsCollectionViewController.m in Sources */,
 				063878BB18A91D3D001FB60E /* main.m in Sources */,
 				063878BF18A91D3D001FB60E /* CBAppDelegate.m in Sources */,
+				E4DFC8A218AE181900DA462B /* UIImageView+CircularImageView.m in Sources */,
 				E45CD94018AA3B71007B0AE0 /* CBContactCell.m in Sources */,
 				E4B86CE418ACCD8E006A9A1E /* CBDetailsViewController.m in Sources */,
 				E4D1BD6618AA295300CB34BE /* CBPLISTManager.m in Sources */,

@@ -42,10 +42,7 @@
     }
     self.imageView.image = image;
     
-    self.imageView.layer.cornerRadius = self.imageView.frame.size.width/2;
-    self.imageView.layer.borderColor = [[UIColor grayColor] CGColor];
-    self.imageView.layer.borderWidth = 1.0f;
-    self.imageView.layer.masksToBounds = YES;
+    [self.imageView makeCircular];
     
     if ([self.email isEqualToString:@""]) {
         self.emailButton.enabled = NO;
