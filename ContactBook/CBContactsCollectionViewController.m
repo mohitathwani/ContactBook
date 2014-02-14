@@ -126,7 +126,7 @@
         }
     }
     
-    else if ([segue.identifier isEqualToString:@"showDetailsPhone"]) {
+    else if ([segue.identifier isEqualToString:@"showDetailsPhone"] || [segue.identifier isEqualToString:@"showDetailsPad"]) {
         CBDetailsViewController *dVC = (CBDetailsViewController *)[segue destinationViewController];
         NSIndexPath *indexPath = [[self.collectionView indexPathsForSelectedItems] lastObject];
         

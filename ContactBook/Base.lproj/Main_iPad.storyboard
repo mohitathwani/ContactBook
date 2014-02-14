@@ -44,6 +44,7 @@
                                 <connections>
                                     <outlet property="imageView" destination="D02-Dw-OJV" id="Lee-Mh-9Wa"/>
                                     <outlet property="nameLabel" destination="aBe-g6-fc1" id="SvZ-1F-r6d"/>
+                                    <segue destination="SHo-6b-KBf" kind="modal" identifier="showDetailsPad" modalPresentationStyle="formSheet" modalTransitionStyle="flipHorizontal" id="kEu-gN-D51"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -153,6 +154,92 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1904" y="-427"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="m8I-Pk-6aF">
+            <objects>
+                <viewController id="SHo-6b-KBf" customClass="CBDetailsViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4lB-Hi-Fm8"/>
+                        <viewControllerLayoutGuide type="bottom" id="P2r-qh-hfd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wzr-6O-9zx">
+                        <rect key="frame" x="0.0" y="0.0" width="540" height="620"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HtM-jb-q7a">
+                                <rect key="frame" x="20" y="75" width="250" height="250"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ruj-3d-8ib">
+                                <rect key="frame" x="278" y="109" width="242" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTj-TE-UmO">
+                                <rect key="frame" x="278" y="191" width="242" height="74"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="38"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Telephone :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeP-Ft-2vc">
+                                <rect key="frame" x="182" y="374" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email :" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ivp-Ih-7lG">
+                                <rect key="frame" x="218" y="410" width="52" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jKI-uv-ap1">
+                                <rect key="frame" x="301" y="406" width="176" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="emailButtonClicked:" destination="SHo-6b-KBf" eventType="touchUpInside" id="rN7-3P-OX3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-86-pk5">
+                                <rect key="frame" x="301" y="370" width="176" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="telephoneButtonClicked:" destination="SHo-6b-KBf" eventType="touchUpInside" id="QO4-xM-rGb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="8JI-wJ-xBW" appends="YES" id="S3Z-SQ-lPr"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="emailButton" destination="jKI-uv-ap1" id="Qn5-A7-ZDV"/>
+                        <outlet property="firstNameLabel" destination="Ruj-3d-8ib" id="7z7-XQ-OYP"/>
+                        <outlet property="imageView" destination="HtM-jb-q7a" id="lZf-dC-WkL"/>
+                        <outlet property="lastNameLabel" destination="oTj-TE-UmO" id="5CH-AI-gZz"/>
+                        <outlet property="telephoneButton" destination="ffR-86-pk5" id="fmn-Vd-c2T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBT-y0-j1Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="8JI-wJ-xBW">
+                    <connections>
+                        <action selector="swipeGesture:" destination="SHo-6b-KBf" id="7hC-g0-Crq"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="1912" y="266"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QeV-zD-klE">

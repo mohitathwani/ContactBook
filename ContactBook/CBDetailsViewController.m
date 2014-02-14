@@ -114,5 +114,9 @@
 - (IBAction)emailButtonClicked:(UIButton *)sender {
     [self showEmailModalView];
 }
+- (IBAction)swipeGesture:(UISwipeGestureRecognizer *)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 @end
